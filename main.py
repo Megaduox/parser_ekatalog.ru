@@ -62,7 +62,7 @@ def get_links(page_url):
 
     while len(pagination_pages) != 0:
         current_url = pagination_pages.pop()
-        print('—бор ссылок с URL :', current_url)
+        print('—бор ссылок с URL:', current_url)
         request = requests.get(current_url, headers=HEADERS)
         tree = html.fromstring(request.content)
         links = tree.xpath("//a[@class='model-short-title no-u']/@href")
